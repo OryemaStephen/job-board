@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaHome, FaSearch, FaTimes, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -10,23 +10,52 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='md:w-64 w-20 h-screen'>
-      <button 
-        className="fixed z-50 p-2 text-white bg-slate-600 rounded-lg top-4 left-4 md:hidden" 
+    <div className="w-20 h-screen md:w-64">
+      <button
+        className="fixed top-0 left-0 z-50 p-2 text-white rounded-r-sm bg-slate-600 md:hidden"
         onClick={toggleSidebar}
       >
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      <div 
+      <div
         className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-transform transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 md:relative md:block`}
       >
+        <div className="flex flex-col p-4">
+          <Link to="/" className="flex items-center text-4xl ">
+            Job Board
+          </Link>
+        </div>
         <nav className="flex flex-col p-4">
-          <Link to="/" className="px-4 py-2 rounded-md hover:bg-gray-700">Dashboard</Link>
-          <Link to="/searchjobs" className="px-4 py-2 rounded-md hover:bg-gray-700">Search Jobs</Link>
-          <Link to="/profile" className="px-4 py-2 rounded-md hover:bg-gray-700">Profile</Link>
+          <Link
+            to="/"
+            className="flex items-center gap-4 px-4 py-2 rounded-md hover:bg-gray-700"
+          >
+            <span>
+              <FaHome />
+            </span>
+            <span>Dashboard</span>
+          </Link>
+          <Link
+            to="/searchjobs"
+            className="flex items-center gap-4 px-4 py-2 rounded-md hover:bg-gray-700"
+          >
+            <span>
+              <FaSearch />
+            </span>
+            <span>Search Jobs</span>
+          </Link>
+          <Link
+            to="/profile"
+            className="flex items-center gap-4 px-4 py-2 rounded-md hover:bg-gray-700"
+          >
+            <span>
+              <FaUser />
+            </span>
+            <span>Profile</span>
+          </Link>
         </nav>
       </div>
     </div>
