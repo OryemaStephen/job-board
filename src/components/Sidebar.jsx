@@ -23,14 +23,20 @@ const Sidebar = () => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 md:relative md:block`}
       >
+        <div className="flex flex-col p-4">
+          <Link to="/" className="flex items-center text-4xl ">
+            Job Board
+          </Link>
+        </div>
         <nav className="flex flex-col p-4">
-          <Link to="/" className="flex items-center gap-4 px-4 py-2 rounded-md hover:bg-gray-700">
-          <span>
-            <FaHome />
-          </span>
-          <span>
-              Dashboard
+          <Link
+            to="/"
+            className="flex items-center gap-4 px-4 py-2 rounded-md hover:bg-gray-700"
+          >
+            <span>
+              <FaHome />
             </span>
+            <span>Dashboard</span>
           </Link>
           <Link
             to="/searchjobs"
@@ -39,9 +45,7 @@ const Sidebar = () => {
             <span>
               <FaSearch />
             </span>
-            <span>
-              Search Jobs
-            </span>
+            <span>Search Jobs</span>
           </Link>
           <Link
             to="/profile"
@@ -50,9 +54,7 @@ const Sidebar = () => {
             <span>
               <FaUser />
             </span>
-            <span>
-              Profile
-            </span>
+            <span>Profile</span>
           </Link>
         </nav>
       </div>
