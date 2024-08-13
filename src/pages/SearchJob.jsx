@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const SearchJob = () => {
-  return (
-    <div className="space-y-4">SearchJob</div>
-  )
-}
+  return <div className="space-y-4">SearchJob</div>;
+};
 
-export default SearchJob
+export default SearchJob;

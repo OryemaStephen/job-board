@@ -3,9 +3,9 @@ import AppRoutes from './router/AppRoutes';
 
 const App = () => {
   return (
-      <div className="flex w-full h-full">   
-          <AppRoutes />
-      </div>
+    <div className="flex w-full h-full">
+      <AppRoutes />
+    </div>
   );
 };
 
