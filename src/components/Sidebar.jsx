@@ -10,13 +10,15 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="relative w-10 z-10 h-screen md:w-64">
-      <button
-        className={`absolute z-50 p-1 text-xl text-white rounded-full bg-transparent ${isOpen?'text-white top-0 left-0':'top-3 left-3 text-slate-700'}  md:hidden`}
-        onClick={toggleSidebar}
-      >
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </button>
+    <div className="w-10 z-10 h-screen md:w-64">
+      <div className='w-full relative'>
+        <button
+          className={`absolute z-50 p-1 text-xl text-white rounded-full bg-transparent ${isOpen?'text-white top-0 left-0':'top-3 left-3 text-slate-700'}  md:hidden`}
+          onClick={toggleSidebar}
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
 
       <div
         className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-transform transform ${

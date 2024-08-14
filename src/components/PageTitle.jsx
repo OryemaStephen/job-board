@@ -6,7 +6,7 @@ const PageTitle = ({ text, image }) => {
   return (
     <div className="flex items-center z-0 justify-between w-full h-10">
       <div className='flex justify-between w-full lg:w-1/2  items-center'>
-        <div className='hidden sm:flex font-bold'>{text}</div>
+        <div className='hidden uppercase sm:flex font-bold'>{text}</div>
         <SearchField
           placeholder="Search something here .... "
           // value={inputValue}

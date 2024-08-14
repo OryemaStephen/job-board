@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <div className="space-y-4 w-full">
       <div className='w-full h-full'>
-        <PageTitle text="Search Jobs" image={profile} />
+        <PageTitle text="Dashboard" image={profile} />
       </div>
       <div>
         <HomeSummary />
