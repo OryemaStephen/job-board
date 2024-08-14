@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const PageTitle = ({ text }) => {
   return (
-    <div className="flex items-center justify-between w-full h-10">
+    <div className="flex items-center justify-around w-full h-10">
       <span>
         <FaBarsStaggered />
       </span>

@@ -5,8 +5,10 @@ import PageTitle from '../components/pageTitle';
 
 const Dashboard = () => {
   return (
-    <div className="w-full space-y-4">
-      <PageTitle text="Serach Jobs" />
+    <div className="space-y-4 w-full">
+      <div className='w-full h-full'>
+        <PageTitle text="Search Jobs" />
+      </div>
     </div>
   );
 };
