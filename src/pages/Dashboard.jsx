@@ -2,12 +2,17 @@
 
 import React from 'react';
 import PageTitle from '../components/pageTitle';
+import profile from '../assets/profile.png'
+import HomeSummary from '../components/HomeSummary';
 
 const Dashboard = () => {
   return (
     <div className="space-y-4 w-full">
       <div className='w-full h-full'>
-        <PageTitle text="Search Jobs" />
+        <PageTitle text="Search Jobs" image={profile} />
+      </div>
+      <div>
+        <HomeSummary />
       </div>
     </div>
   );
