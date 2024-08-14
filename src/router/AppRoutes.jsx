@@ -10,7 +10,7 @@ const AppRoutes = () => {
     <Router>
       <div className="flex min-h-screen">
         <Sidebar />
-        <div className="flex-grow w-full p-4">
+        <div className="flex-grow p-4">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/searchjobs" element={<SearchJob />} />
