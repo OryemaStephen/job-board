@@ -8,9 +8,9 @@ import Sidebar from '../components/Sidebar';
 const AppRoutes = () => {
   return (
     <Router>
-      <div className="flex min-h-screen">
+      <div className=" w-full flex min-h-screen">
         <Sidebar />
-        <div className="flex-grow p-4">
+        <div className="flex-grow p-4 md:w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/searchjobs" element={<SearchJob />} />
