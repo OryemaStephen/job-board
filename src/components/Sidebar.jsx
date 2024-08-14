@@ -10,9 +10,9 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-20 h-screen md:w-64">
+    <div className="relative w-10 z-10 h-screen md:w-64">
       <button
-        className="fixed top-0 left-0 z-50 p-2 text-white rounded-r-sm bg-slate-600 md:hidden"
+        className={`absolute z-50 p-1 text-xl text-white rounded-full bg-transparent ${isOpen?'text-white top-0 left-0':'top-3 left-3 text-slate-700'}  md:hidden`}
         onClick={toggleSidebar}
       >
         {isOpen ? <FaTimes /> : <FaBars />}
