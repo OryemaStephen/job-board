@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useParams, useNavigate } from 'react-router-dom';
 import JobApplicationForm from './JobApplicationForm';
+import emailjs from 'emailjs-com';
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -21,6 +22,29 @@ const JobDetails = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_dbma1ll', // Replace with your EmailJS service ID
+        'template_fx2oe9d', // Replace with your EmailJS template ID
+        e.target,     
+        'z8XuPpnJZ9SabQfG3'
+      )
+      .then(
+        (result) => {
+            console.log(result.text)
+          alert('Application sent successfully!');
+          handleCloseModal();
+        },
+        (error) => {
+            console.log(error)
+          alert('Failed to send application. Please try again.');
+        }
+      );
   };
 
   if (!job) {
@@ -64,44 +88,53 @@ const JobDetails = () => {
 
       <JobApplicationForm isOpen={isModalOpen} onClose={handleCloseModal}>
         <h2 className="mb-4 text-lg font-bold">Apply for {job.title}</h2>
-        <form className="space-y-4">
+        <form onSubmit={handleFormSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Name</label>
             <input
               type="text"
+              name="name"
               className="w-full p-2 mt-1 border border-gray-300 rounded-md"
               placeholder="Your name"
+              required
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Email</label>
             <input
               type="email"
+              name="email"
               className="w-full p-2 mt-1 border border-gray-300 rounded-md"
               placeholder="Your email"
+              required
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Phone</label>
             <input
               type="tel"
+              name="phone"
               className="w-full p-2 mt-1 border border-gray-300 rounded-md"
               placeholder="Your phone"
+              required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Phone</label>
+            <label className="block text-sm font-medium text-gray-700">Resume</label>
             <input
               type="file"
+              name="resume"
               className="w-full p-2 mt-1 border border-gray-300 rounded-md"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Cover Letter</label>
             <textarea
+              name="cover_letter"
               className="w-full p-2 mt-1 border border-gray-300 rounded-md"
               placeholder="Write your cover letter"
               rows="4"
+              required
             />
           </div>
           <button
