@@ -10,10 +10,10 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-10 z-10 h-screen md:w-64">
-      <div className='w-full relative'>
+    <div className="z-10 w-3 h-screen md:w-64">
+      <div className='relative w-full'>
         <button
-          className={`absolute z-50 p-1 text-xl text-white rounded-full bg-transparent ${isOpen?'text-white top-0 left-0':'top-3 left-3 text-slate-700'}  md:hidden`}
+          className={`absolute z-50 text-xl rounded-full bg-transparent ${isOpen?'text-white top-0 left-0':'top-0 left-0 text-slate-700'}  md:hidden`}
           onClick={toggleSidebar}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -50,13 +50,13 @@ const Sidebar = () => {
             <span>Search Jobs</span>
           </Link>
           <Link
-            to="/profile"
+            to="/about"
             className="flex items-center gap-4 px-4 py-2 rounded-md hover:bg-gray-700"
           >
             <span>
               <FaUser />
             </span>
-            <span>Profile</span>
+            <span>About</span>
           </Link>
         </nav>
       </div>
