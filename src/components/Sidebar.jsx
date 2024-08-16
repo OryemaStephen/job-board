@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaBars, FaHome, FaSearch, FaTimes, FaUser } from 'react-icons/fa';
+import { FaBars, FaHome, FaSearch, FaUser } from 'react-icons/fa';
+import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -13,10 +14,10 @@ const Sidebar = () => {
     <div className="z-10 w-3 h-screen md:w-64">
       <div className='relative w-full'>
         <button
-          className={`absolute z-50 text-xl rounded-full bg-transparent ${isOpen?'text-white top-0 left-0':'top-0 left-0 text-slate-700'}  md:hidden`}
+          className={`absolute z-50 text-xl rounded-full bg-transparent ${isOpen?'text-white top-0 left-[170px]':'top-3 left-0 text-slate-700'}  md:hidden`}
           onClick={toggleSidebar}
         >
-          {isOpen ? <FaTimes /> : <FaBars />}
+          {isOpen ? <MdOutlineArrowBackIosNew /> : <FaBars /> }
         </button>
       </div>
 

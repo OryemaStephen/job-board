@@ -52,7 +52,7 @@ const JobDetails = () => {
   }
 
   return (
-    <div className='p-1 md:p-3'>
+    <div className='p-1 py-10 md:p-3 bg-white'>
       <button
         onClick={() => navigate(-1)}
         className='mb-4 text-3xl text-black outline-none'
