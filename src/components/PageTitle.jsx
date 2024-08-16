@@ -2,17 +2,17 @@ import React from 'react';
 import SearchField from './SearchField';
 import PropTypes from 'prop-types';
 
-const PageTitle = ({ text, image }) => {
+const PageTitle = ({ text, image, onSearchChange, showSearch }) => {
   return (
     <div className="z-0 flex items-center justify-between w-full h-10">
       <div className='flex items-center justify-between w-full lg:w-1/2'>
         <div className='hidden font-bold uppercase sm:flex'>{text}</div>
-        <SearchField
-          placeholder="Search something here .... "
-          // value={inputValue}
-          // onChange={handleInputChange}
-          // validate={validateInput}
-        />
+        {showSearch && (
+          <SearchField
+            placeholder="Search something here .... "
+            onChange={onSearchChange}
+          />
+        )}
       </div>
       <div className='items-center justify-end hidden w-1/2 gap-5 lg:flex'>
         <img src={image} className='object-cover object-top w-10 h-10 rounded-full' />
@@ -21,7 +21,6 @@ const PageTitle = ({ text, image }) => {
           <div>Admin </div>
         </div>
       </div>
-
     </div>
   );
 };
@@ -29,6 +28,12 @@ const PageTitle = ({ text, image }) => {
 PageTitle.propTypes = {
   text: PropTypes.string,
   image: PropTypes.string,
+  onSearchChange: PropTypes.func,
+  showSearch: PropTypes.bool, 
+};
+
+PageTitle.defaultProps = {
+  showSearch: false, 
 };
 
 export default PageTitle;
