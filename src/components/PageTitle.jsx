@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 const PageTitle = ({ text, image }) => {
   return (
-    <div className="flex items-center z-0 justify-between w-full h-10">
-      <div className='flex justify-between w-full lg:w-1/2  items-center'>
-        <div className='hidden uppercase sm:flex font-bold'>{text}</div>
+    <div className="z-0 flex items-center justify-between w-full h-10">
+      <div className='flex items-center justify-between w-full lg:w-1/2'>
+        <div className='hidden font-bold uppercase sm:flex'>{text}</div>
         <SearchField
           placeholder="Search something here .... "
           // value={inputValue}
@@ -14,10 +14,10 @@ const PageTitle = ({ text, image }) => {
           // validate={validateInput}
         />
       </div>
-      <div className='hidden w-1/2 lg:flex justify-end gap-5 items-center'>
-        <img src={image} className='w-10 h-10 object-cover object-top rounded-full' />
+      <div className='items-center justify-end hidden w-1/2 gap-5 lg:flex'>
+        <img src={image} className='object-cover object-top w-10 h-10 rounded-full' />
         <div className='flex flex-col items-start text-xs'>
-          <div className='font-bold text-sm'>Stephen </div>
+          <div className='text-sm font-bold'>Stephen </div>
           <div>Admin </div>
         </div>
       </div>
