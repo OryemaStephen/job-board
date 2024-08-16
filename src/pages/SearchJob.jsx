@@ -9,7 +9,7 @@ const SearchJob = () => {
       <div className='w-full h-full'>
         <PageTitle text="Search Jobs" image={profile} />
       </div>
-      <div>
+      <div className='p-4'>
         <Jobs />
       </div>
   </div>
