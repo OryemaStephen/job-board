@@ -1,6 +1,7 @@
 import React from 'react';
 import Job from './Job';
 import { faker } from '@faker-js/faker';
+import PropTypes from 'prop-types';
 
 const generateRandomJob = (index) => {
   return {
@@ -15,15 +16,20 @@ const generateRandomJob = (index) => {
   };
 };
 
-const Jobs = () => {
+const Jobs = ({ searchTerm }) => {
   const jobData = Array.from({ length: 9 }, (_, index) => generateRandomJob(index));
 
   // Store the jobs in local storage
   localStorage.setItem('jobs', JSON.stringify(jobData));
 
+  // Filter jobs based on search term
+  const filteredJobs = jobData.filter(job => 
+    job.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-      {jobData.map((job) => (
+      {filteredJobs.map((job) => (
         <Job
           key={job.id}
           id={job.id}
@@ -38,6 +44,10 @@ const Jobs = () => {
       ))}
     </div>
   );
+};
+
+Jobs.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
 };
 
 export default Jobs;
