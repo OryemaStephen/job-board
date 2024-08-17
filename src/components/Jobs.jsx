@@ -17,18 +17,20 @@ const generateRandomJob = (index) => {
 };
 
 const Jobs = ({ searchTerm }) => {
-  const jobData = Array.from({ length: 9 }, (_, index) => generateRandomJob(index));
+  const jobData = Array.from({ length: 9 }, (_, index) =>
+    generateRandomJob(index),
+  );
 
   // Store the jobs in local storage
   localStorage.setItem('jobs', JSON.stringify(jobData));
 
   // Filter jobs based on search term
-  const filteredJobs = jobData.filter(job => 
-    job.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredJobs = jobData.filter((job) =>
+    job.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
-    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+    <div className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3">
       {filteredJobs.map((job) => (
         <Job
           key={job.id}
