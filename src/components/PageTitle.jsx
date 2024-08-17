@@ -1,11 +1,12 @@
 import React from 'react';
 import SearchField from './SearchField';
 import PropTypes from 'prop-types';
+
 const PageTitle = ({ text, image, showSearch = true}) => {
   return (
-    <div className="flex bg-white items-center justify-between w-full h-fit md:h-20 px-4">
-      <div className='block md:flex py-5 md:items-center md:justify-between w-full lg:w-1/2'>
-        <div className='font-bold uppercase py-5'>{text}</div>
+    <div className="flex items-center justify-between w-full px-4 bg-white h-fit md:h-20">
+      <div className='block w-full py-5 md:flex md:items-center md:justify-between lg:w-1/2'>
+        <div className='py-5 font-bold uppercase'>{text}</div>
         {
         showSearch && <SearchField
           placeholder="Search something here .... "
@@ -19,6 +20,7 @@ const PageTitle = ({ text, image, showSearch = true}) => {
           <div>Admin </div>
         </div>
       </div>
+
     </div>
   );
 };
@@ -26,11 +28,7 @@ const PageTitle = ({ text, image, showSearch = true}) => {
 PageTitle.propTypes = {
   text: PropTypes.string,
   image: PropTypes.string,
-  showSearch: PropTypes.bool, 
-};
-
-PageTitle.defaultProps = {
-  showSearch: false, 
+  showSearch: PropTypes.bool
 };
 
 export default PageTitle;

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import PageTitle from '../components/PageTitle';
 import profile from '../assets/profile.png'
 import Jobs from '../components/Jobs';
+import PageTitle from '../components/pageTitle';
+import Footer from '../components/Footer';
 
 const SearchJob = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,6 +18,7 @@ const SearchJob = () => {
       <div>
         <Jobs searchTerm = {searchTerm} />
       </div>
+      <Footer />
   </div>
   )
 };

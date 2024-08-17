@@ -6,12 +6,21 @@ import airbnb from '../assets/airbnb.png'
 
 const Brands = () => {
   return (
-    <div className='w-full flex flex-wrap justify-between items-center py-5 px-4'>
-        <img src={google} className='h-10 w-auto' alt='Google'/> 
-        <img src={slack} className='h-10 w-auto' alt='Slack'/> 
-        <img src={dribble} className='h-10 w-auto' alt='Dribble'/> 
-        <img src={airbnb} className='h-10 w-auto' alt='AirBnB'/> 
+    <div className='grid w-full grid-cols-1 gap-4 py-5 mx-auto text-center sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='flex items-center justify-center'>
+            <img src={google} className='w-auto h-10' alt='Google'/> 
+        </div>
+        <div className='flex items-center justify-center'>
+            <img src={slack} className='w-auto h-7' alt='Slack'/> 
+        </div>
+        <div className='flex items-center justify-center'>
+            <img src={dribble} className='w-auto h-7' alt='Dribble'/> 
+        </div>
+        <div className='flex items-center justify-center'>
+            <img src={airbnb} className='w-auto h-10' alt='AirBnB'/> 
+        </div>
     </div>
+
   )
 }
 
