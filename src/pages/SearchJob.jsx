@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import profile from '../assets/profile.png'
 import Jobs from '../components/Jobs';
-import PageTitle from '../components/pageTitle';
+import PageTitle from '../components/PageTitle';
 import Footer from '../components/Footer';
 
 const SearchJob = () => {

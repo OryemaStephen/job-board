@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTitle from '../components/pageTitle';
+import PageTitle from '../components/PageTitle';
 import profile from '../assets/profile.png';
 import HomeSummary from '../components/HomeSummary';
 

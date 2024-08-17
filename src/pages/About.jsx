@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from '../components/Footer'
-import PageTitle from '../components/pageTitle';
+import PageTitle from '../components/PageTitle';
 import profile from '../assets/profile.png';
 import AboutWelcome from '../components/AboutWelcome';
 import AboutWorking from '../components/AboutWorking';

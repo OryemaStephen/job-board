@@ -2,7 +2,7 @@ import React from 'react';
 import SearchField from './SearchField';
 import PropTypes from 'prop-types';
 
-const PageTitle = ({ text, image, showSearch = true}) => {
+const PageTitle = ({ text,onSearchChange, image, showSearch = true}) => {
   return (
     <div className="flex items-center justify-between w-full px-4 bg-white h-fit md:h-20">
       <div className='block w-full py-5 md:flex md:items-center md:justify-between lg:w-1/2'>
@@ -10,6 +10,7 @@ const PageTitle = ({ text, image, showSearch = true}) => {
         {
         showSearch && <SearchField
           placeholder="Search something here .... "
+          onSearchChange={onSearchChange}
         />
         }
       </div>
@@ -28,7 +29,8 @@ const PageTitle = ({ text, image, showSearch = true}) => {
 PageTitle.propTypes = {
   text: PropTypes.string,
   image: PropTypes.string,
-  showSearch: PropTypes.bool
+  showSearch: PropTypes.bool,
+  onSearchChange: PropTypes.func.isRequired
 };
 
 export default PageTitle;

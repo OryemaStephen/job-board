@@ -6,22 +6,21 @@ const SearchField = ({
   placeholder,
   type = 'text',
   value,
-  onChange,
-  validate,
+  onSearchChange
 }) => {
   const [error, setError] = useState('');
 
-  const handleChange = (e) => {
-    const inputValue = e.target.value;
+  // const handleChange = (e) => {
+  //   const inputValue = e.target.value;
 
-    // Basic validation logic
-    if (validate) {
-      const validationError = validate(inputValue);
-      setError(validationError);
-    }
+  //   // Basic validation logic
+  //   if (validate) {
+  //     const validationError = validate(inputValue);
+  //     setError(validationError);
+  //   }
 
-    onChange(e);
-  };
+  //   onChange(e);
+  // };
 
   return (
     <div className="relative w-64 lg:w-80">
@@ -29,11 +28,11 @@ const SearchField = ({
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={handleChange}
-        className="h-8 pl-4 pr-8 rounded-lg w-full bg-slate-300 border-none outline-none"
+        onChange={onSearchChange}
+        className="w-full h-8 pl-4 pr-8 border-none rounded-lg outline-none bg-slate-300"
       />
-      <FaSearch className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
-      {error && <p className="error-message">{error}</p>}
+      <FaSearch className="absolute text-gray-500 transform -translate-y-1/2 right-2 top-1/2" />
+      {error && <p className="error-message">{()=>setError(error)}</p>}
     </div>
   );
 };
@@ -43,7 +42,7 @@ SearchField.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onSearchChange: PropTypes.func.isRequired,
   validate: PropTypes.func,
 };
 
