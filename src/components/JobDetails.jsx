@@ -90,6 +90,16 @@ const JobDetails = () => {
         <h2 className="mb-4 text-lg font-bold">Apply for {job.title}</h2>
         <form onSubmit={handleFormSubmit} className="space-y-4">
           <div>
+            <label className="block text-sm font-medium text-gray-700">Position</label>
+            <input
+              type="text"
+              name="title"
+              value={job.title}
+              className="w-full p-2 mt-1 border border-gray-300 rounded-md"
+              readOnly
+            />
+          </div>
+          <div>
             <label className="block text-sm font-medium text-gray-700">Name</label>
             <input
               type="text"

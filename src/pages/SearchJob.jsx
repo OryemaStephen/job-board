@@ -1,17 +1,20 @@
 import React from 'react';
 import profile from '../assets/profile.png'
 import Jobs from '../components/Jobs';
-import Footer from '../components/Footer';
-import PageTitle from '../components/pageTitle';
 
 const SearchJob = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (e)=>{
+    setSearchTerm(e.target.value)
+  }
   return (
     <div className="w-full space-y-4">
       <div className='w-full h-full'>
-        <PageTitle text="Search Jobs" image={profile} />
+        <PageTitle text="Search Jobs" showSearch={true} image={profile} onSearchChange = {handleSearchChange} />
       </div>
-      <div className='px-4'>
-        <Jobs />
+      <div>
+        <Jobs searchTerm = {searchTerm} />
       </div>
       <Footer />
   </div>
