@@ -4,8 +4,6 @@ import PageTitle from '../components/pageTitle';
 import profile from '../assets/profile.png';
 import AboutWelcome from '../components/AboutWelcome';
 import AboutWorking from '../components/AboutWorking';
-import PageTitle from '../components/PageTitle'
-import profile from '../assets/profile.png'
 
 const About = () => {
   return (
