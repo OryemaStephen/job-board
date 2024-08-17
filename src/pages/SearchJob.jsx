@@ -1,7 +1,8 @@
 import React from 'react';
-import PageTitle from '../components/PageTitle';
 import profile from '../assets/profile.png'
 import Jobs from '../components/Jobs';
+import Footer from '../components/Footer';
+import PageTitle from '../components/pageTitle';
 
 const SearchJob = () => {
   return (
@@ -9,9 +10,10 @@ const SearchJob = () => {
       <div className='w-full h-full'>
         <PageTitle text="Search Jobs" image={profile} />
       </div>
-      <div className='p-4'>
+      <div className='px-4'>
         <Jobs />
       </div>
+      <Footer />
   </div>
   )
 };

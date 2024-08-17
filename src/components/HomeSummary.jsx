@@ -1,22 +1,26 @@
 import React from 'react'
 import Brands from './Brands';
+import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const HomeSummary = () => {
-    const today = new Date();
-    const year = today.getFullYear();
+
   return (
-    <div className='w-full h-full flex flex-col justify-center items-center gap-5'>
-        <h1 className='text-3xl sm:text-4xl lg:text-7xl text-center font-bold'>
-            Find & Hire Experts for any Job.
-        </h1>
-        <p className='text-xl md:text-2xl text-center'>
-            Unlock your potential with quality job & earn from world leading brands.
-        </p>
-        <Brands />
-        <footer className='sticky top-2 py-5'>
-            <span>&copy; </span>
-            <span>{year} </span>
-        </footer>
+    <div className='w-full h-full'>
+        <div className='flex flex-col items-center justify-between w-full h-full gap-10 px-2 pb-16 md:pb-0'>
+            <h1 className='text-3xl font-bold text-center sm:text-4xl lg:text-5xl'>
+                Find & Apply for your dream job from anywhere.
+            </h1>
+            <p className='text-lg text-center md:text-xl'>
+                Unlock your potential with quality job & earn from world leading brands.
+            </p>
+            <Link to='/searchjobs' className='px-3 py-1 text-xl text-black bg-white border rounded-lg cursor-pointer hover:border-slate-500 hover:text-white hover:bg-slate-500'>Search for jobs</Link>
+            <Brands />
+        </div>
+        <div className='bottom-0 w-full md:fixed'>
+            <Footer /> 
+        </div>       
+        
     </div>
   )
 }
