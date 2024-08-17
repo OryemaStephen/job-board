@@ -31,19 +31,19 @@ const JobDetails = () => {
       .sendForm(
         'service_dbma1ll', // Replace with your EmailJS service ID
         'template_fx2oe9d', // Replace with your EmailJS template ID
-        e.target,     
-        'z8XuPpnJZ9SabQfG3'
+        e.target,
+        'z8XuPpnJZ9SabQfG3',
       )
       .then(
         (result) => {
-            console.log(result.text)
+          console.log(result.text);
           alert('Application sent successfully!');
           handleCloseModal();
         },
         (error) => {
-            console.log(error)
+          console.log(error);
           alert('Failed to send application. Please try again.');
-        }
+        },
       );
   };
 
@@ -52,36 +52,40 @@ const JobDetails = () => {
   }
 
   return (
-    <div className='w-full h-full p-1 py-10 bg-white md:p-3'>
+    <div className="w-full h-full p-1 py-10 bg-white md:p-3">
       <button
         onClick={() => navigate(-1)}
-        className='mb-4 text-3xl text-black outline-none'
+        className="mb-4 text-3xl text-black outline-none"
       >
         <IoMdArrowBack />
       </button>
-      <div className='mb-4'>
-        <img src={job.logo} alt={job.title} className='w-20 h-20 mb-4 rounded-full' />
-        <h2 className='text-xl font-semibold'>{job.title}</h2>
-        <p className='text-sm text-gray-700'>{job.company}</p>
+      <div className="mb-4">
+        <img
+          src={job.logo}
+          alt={job.title}
+          className="w-20 h-20 mb-4 rounded-full"
+        />
+        <h2 className="text-xl font-semibold">{job.title}</h2>
+        <p className="text-sm text-gray-700">{job.company}</p>
       </div>
-      <div className='mb-4'>
-        <span className='text-base font-bold'>Salary: </span>
-        <span className='text-base'>{job.salary} per year</span>
+      <div className="mb-4">
+        <span className="text-base font-bold">Salary: </span>
+        <span className="text-base">{job.salary} per year</span>
       </div>
-      <div className='mb-4'>
-        <p className='text-sm text-justify'>{job.description}</p>
+      <div className="mb-4">
+        <p className="text-sm text-justify">{job.description}</p>
       </div>
-      <div className='mb-4'>
-        <span className='text-base font-bold'>Type: </span>
-        <span className='text-base'>{job.type}</span>
+      <div className="mb-4">
+        <span className="text-base font-bold">Type: </span>
+        <span className="text-base">{job.type}</span>
       </div>
       <div>
-        <span className='text-base font-bold'>Location: </span>
-        <span className='text-base'>{job.location}</span>
+        <span className="text-base font-bold">Location: </span>
+        <span className="text-base">{job.location}</span>
       </div>
       <button
         onClick={handleApplyClick}
-        className='px-3 py-1 mt-3 text-white bg-blue-500 rounded-lg hover:bg-blue-900'
+        className="px-3 py-1 mt-3 text-white bg-blue-500 rounded-lg hover:bg-blue-900"
       >
         Apply
       </button>
@@ -90,7 +94,9 @@ const JobDetails = () => {
         <h2 className="mb-4 text-lg font-bold">Apply for {job.title}</h2>
         <form onSubmit={handleFormSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Position</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Position
+            </label>
             <input
               type="text"
               name="title"
@@ -100,7 +106,9 @@ const JobDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Name</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Name
+            </label>
             <input
               type="text"
               name="name"
@@ -110,7 +118,9 @@ const JobDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
               type="email"
               name="email"
@@ -120,7 +130,9 @@ const JobDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Phone</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Phone
+            </label>
             <input
               type="tel"
               name="phone"
@@ -130,7 +142,9 @@ const JobDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Resume</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Resume
+            </label>
             <input
               type="file"
               name="resume"
@@ -138,7 +152,9 @@ const JobDetails = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Cover Letter</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Cover Letter
+            </label>
             <textarea
               name="cover_letter"
               className="w-full p-2 mt-1 border border-gray-300 rounded-md"

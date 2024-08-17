@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
 
-const SearchField = ({
-  placeholder,
-  type = 'text',
-  value,
-  onSearchChange
-}) => {
+const SearchField = ({ placeholder, type = 'text', value, onSearchChange }) => {
   const [error, setError] = useState('');
 
   // const handleChange = (e) => {
@@ -32,7 +27,7 @@ const SearchField = ({
         className="w-full h-8 pl-4 pr-8 border-none rounded-lg outline-none bg-slate-300"
       />
       <FaSearch className="absolute text-gray-500 transform -translate-y-1/2 right-2 top-1/2" />
-      {error && <p className="error-message">{()=>setError(error)}</p>}
+      {error && <p className="error-message">{() => setError(error)}</p>}
     </div>
   );
 };

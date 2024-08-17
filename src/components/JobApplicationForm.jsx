@@ -20,9 +20,9 @@ const JobApplicationForm = ({ isOpen, onClose, children }) => {
 };
 
 JobApplicationForm.propTypes = {
-  isOpen: PropTypes.bool.isRequired,       
-  onClose: PropTypes.func.isRequired,     
-  children: PropTypes.node.isRequired,    
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default JobApplicationForm;
